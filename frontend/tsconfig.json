@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 指定的ECMAScript版本
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,//允许编译JAvaScript文件
+    "skipLibCheck": true,//跳过所有神明文件的类型检查
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,//允许从没有默认导出的模板进行默认导入
+    "strict": true,//启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true,//不允许对同一文件使用不一致格式的饮用
+
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": ["node_modules","build"]
+}
