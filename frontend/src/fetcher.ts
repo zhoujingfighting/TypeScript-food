@@ -1,15 +1,13 @@
-export default function createFetcher(f){
-    var cache = {}
-    return {
-        read(...args){
-            var key  = args.join('|')
-            if( key in cache ){
-                return cache[key]
-            }else{
-                throw f(...args).then(val =>{
-                    cache[key] = val
-                })
-            }
-        }
-    }
+import useSWR from 'swr'
+import React from 'react';
+import api from './api'
+interface Did{
+    did:number
 }
+function funcFetcher(did:number): Promise<string> {
+    return api.get('/deskinfo?did=' + did)
+}
+export default () => {
+
+}
+// export default funcFetcher;

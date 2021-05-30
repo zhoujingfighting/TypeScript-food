@@ -107,3 +107,19 @@ module.exports = {
     tabWidth: 4,
 };
 ```
+
+在 react 中使用 ts 的几点原则和变化
+所有用到jsx语法的文件都需要以tsx后缀命名
+使用组件声明时的Component<P, S>泛型参数声明，来代替PropTypes！
+全局变量或者自定义的window对象属性，统一在项目根下的global.d.ts中进行声明定义
+对于项目中常用到的接口数据对象，在types/目录下定义好其结构化类型声明
+
+#### TS各种接口类型的应用
+```js
+import { IAlbum } from './business'
+export interface IGetAlbumResponse {
+  album: IAlbum
+  songs: any[]
+}
+```
+

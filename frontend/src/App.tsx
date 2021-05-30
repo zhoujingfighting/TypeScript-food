@@ -1,14 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
-
+import HomePage from './HomePage'
+import Login from './Login'
+import Register from './Register'
+import RestaurantManage from './RestaurantManage'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          周晶
-      </header>
-    </div>
+    <HashRouter>
+      <Route path='/' exact component={HomePage}></Route>
+      <Route path='/login' component={Login}></Route>
+      <Route path='/register' component={Register}></Route>
+      <Route path='/restaurant/:rid/manage' component={RestaurantManage}></Route>
+    </HashRouter>
   );
 }
 
