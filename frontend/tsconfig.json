@@ -10,7 +10,7 @@
     "skipLibCheck": true,//跳过所有神明文件的类型检查
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,//允许从没有默认导出的模板进行默认导入
-    "strict": true,//启用所有严格类型检查选项
+    "strict":false,//启用所有严格类型检查选项
     "forceConsistentCasingInFileNames": true,//不允许对同一文件使用不一致格式的饮用
 
     "noFallthroughCasesInSwitch": true,

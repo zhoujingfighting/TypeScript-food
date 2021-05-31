@@ -1,13 +1,4 @@
-import useSWR from 'swr'
-import React from 'react';
-import api from './api'
-interface Did{
-    did:number
-}
-function funcFetcher(did:number): Promise<string> {
-    return api.get('/deskinfo?did=' + did)
-}
-export default () => {
-
-}
+import fetch from 'unfetch'
+const fetcher = (url:string) => fetch(url).then(r => r.json())
+export default fetcher
 // export default funcFetcher;

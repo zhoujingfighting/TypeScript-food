@@ -52,10 +52,8 @@ app.route('/register')
     })
 
 app.get('/userinfo' ,async (req,res,next) => {
-    var userid = req.cookies.userid
-    console.log(req.cookies)
-    if(userid){
-        res.json(await db.get('SELECT id,name,title FROM users WHERE id=?',userid))
+    if(req.query.uid){
+        res.json(await db.get('SELECT id,name,title FROM users WHERE id=?',req.query.uid))
     }else{
         res.status(404).json({
             code : -1,
@@ -66,10 +64,12 @@ app.get('/userinfo' ,async (req,res,next) => {
 app.route('/login')
     .post(async (req,res,next) => {
         var tryLogin  = req.body
+        console.log(tryLogin,'trylogin')
         var user = await db.get('SELECT id,name,title FROM users WHERE name=? AND password=?' ,
         tryLogin.name ,tryLogin.password)
         if(user){
             res.cookie('userid',user.id)//不使用签名
+            console.log(req.cookies,'cookies')
             res.json({code:0 ,msg:'登陆成功',id:user.id})
         }else{
             res.status(403).json({

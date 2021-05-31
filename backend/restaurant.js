@@ -85,7 +85,9 @@ app.get('/deskinfo' ,async(req,res,next) =>{
     //先确定是哪个餐厅,再确定是哪个桌子
     res.json( desk )
     //返回桌子信息
+    console.log( desk )
 })
+
 
 //菜单管理
 //nemu/restaurant/25

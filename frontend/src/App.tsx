@@ -14,6 +14,7 @@ function App() {
       <Route path='/login' component={Login}></Route>
       <Route path='/register' component={Register}></Route>
       <Route path="/landing/r/:rid/d/:did" component={LandingPage}></Route>
+      <Route path="/restaurant/:rid/manage" component={RestaurantManage}></Route>
     </HashRouter>
   );
 }
