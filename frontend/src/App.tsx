@@ -6,15 +6,15 @@ import HomePage from './HomePage'
 import Login from './Login'
 import Register from './Register'
 import RestaurantManage from './RestaurantManage'
+import LandingPage from './LandingPage'
 function App() {
   return (
     <HashRouter>
       <Route path='/' exact component={HomePage}></Route>
       <Route path='/login' component={Login}></Route>
       <Route path='/register' component={Register}></Route>
-      <Route path='/restaurant/:rid/manage' component={RestaurantManage}></Route>
+      <Route path="/landing/r/:rid/d/:did" component={LandingPage}></Route>
     </HashRouter>
   );
 }
-
 export default App;

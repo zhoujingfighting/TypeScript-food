@@ -3,7 +3,7 @@ import { withRouter,RouteComponentProps } from 'react-router';
 import api from './api';
 // import createFetcher from './fetcher';
 // import './css/landingpage.css'
-// var fetcher = createFetcher( (did:number) =>{
+// const fetcher = createFetcher( (did:number) =>{
 //     return api.get('/deskinfo?did=' + did , {
 //         did : did
 //     })
@@ -30,9 +30,9 @@ const DeskInfo  = (did: Idid) => {
     )
 }
 const LandingPage:React.FC<React.PropsWithChildren<RouteComponentProps>> = (props:React.PropsWithChildren<RouteComponentProps>) => {
-    // var [cumstom, setCustom] = useState(0)
-    // var rid = props.match.params.rid
-    var did:string = (props.match.params as any)?.did
+    // const [cumstom, setCustom] = useState(0)
+    // const rid = props.match.params.rid
+    const did:string = (props.match.params as any)?.did
     // function startOrder() {
     //     props.history.push(`/r/${rid}/d/${did}/c/${cumstom}`)
     // }
