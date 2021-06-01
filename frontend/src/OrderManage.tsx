@@ -62,7 +62,7 @@ function OrderItem(props:OrderProps) {
     )
 }
 
-export default class OrderManage extends React.Component{
+export default class OrderManage extends React.Component<any,any>{
     socket:any
     constructor(props:React.PropsWithChildren<RouteComponentProps>){
         super(props)
@@ -86,7 +86,7 @@ export default class OrderManage extends React.Component{
             }
         })
         this.socket.on('connect',()=> {
-            this.socket.emit('join restaurant',"restaurant:" +  this.props.match.rid )
+            this.socket.emit('join restaurant',"restaurant:" +  this.props.match.rid)
         })
         this.socket.on('new order' , (order:any) => {
             console.log(order)
@@ -134,9 +134,7 @@ export default class OrderManage extends React.Component{
 }
 (OrderManage as any).propTypes = {
     match:PropTypes.shape({
-        params:PropTypes.shape({
-            rid:PropTypes.string
-        })
+        rid:PropTypes.string
     })
   }
 
